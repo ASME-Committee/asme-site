@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme tokens (light only) */
+    --surface: 250 250 251;
+    --surface-subtle: 244 245 248;
+    --surface-elevated: 255 255 255;
+    --surface-inverse: 10 15 31;
+
+    --fg: 10 15 31;
+    --fg-muted: 71 80 105;
+    --fg-subtle: 130 138 159;
+    --fg-inverse: 250 250 251;
+
+    --border: 226 230 237;
+    --border-strong: 200 207 220;
+
+    --accent: 43 88 224;
+    --accent-fg: 255 255 255;
+
+    --noise-opacity: 0.025;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-surface text-fg font-sans;
+    font-feature-settings: "ss01", "cv01", "cv11";
+  }
+
+  ::selection {
+    background-color: rgb(43 88 224 / 0.18);
+    color: inherit;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: var(--noise-opacity);
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+}
+
+@layer components {
+  .h-display {
+    @apply font-display tracking-tightest text-fg;
+    font-weight: 600;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-fg-muted;
+  }
+
+  .hairline {
+    @apply h-px w-full bg-border;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-elevated px-3 py-1 text-xs font-medium text-fg-muted;
+  }
+
+  .card {
+    @apply relative rounded-2xl border border-border bg-surface-elevated transition-colors;
+  }
+
+  .card-hover {
+    @apply hover:border-border-strong hover:shadow-soft;
+  }
+
+  .text-gradient {
+    background: linear-gradient(120deg, rgb(var(--fg)) 0%, rgb(43 88 224) 55%, rgb(242 146 156) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .section {
+    @apply py-20 md:py-28;
+  }
+  .section-tight {
+    @apply py-14 md:py-20;
+  }
+}
+
+@layer utilities {
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  }
+
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 70%, transparent);
+  }
+
+  .balance {
+    text-wrap: balance;
+  }
+
+  .pretty {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-shimmer,
+  .animate-glow,
+  .animate-fade-up {
+    animation: none !important;
+  }
+}
