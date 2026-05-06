@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion, type HTMLMotionProps } from "framer-motion";
-import { type ReactNode } from "react";
+import { type JSX, type ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
