@@ -6,7 +6,7 @@ import { cn } from "@/lib/cn";
 const groups: { key: Person["group"]; label: string; blurb: string }[] = [
   { key: "Team", label: "Team", blurb: "The people who run ASME day to day." },
   { key: "Committee", label: "Committee", blurb: "Office holders and governance." },
-  { key: "Patron", label: "Patrons", blurb: "Senior figures who back ASME's mission." },
+  { key: "Patron", label: "Patrons & ambassadors", blurb: "Senior figures and ambassadors who back ASME's mission." },
 ];
 
 export function People() {

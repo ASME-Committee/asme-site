@@ -201,7 +201,7 @@ export const auscep = {
     },
   ],
   outcomes: [
-    "100+ Australian clinicians supported since 2022",
+    "120 clinicians across VIC, NSW and WA in Cohorts 1 and 2",
     "$20M+ raised by participants",
     "18,000 lives impacted across pilots and rollouts",
   ],
@@ -555,26 +555,34 @@ export type Person = {
 };
 
 export const people: Person[] = [
+  // Team
+  { name: "Matt Hallam", title: "Chief Executive Officer", group: "Team", initials: "MH" },
+  { name: "Masha Pelipas", title: "AUSCEP Lead", group: "Team", initials: "MP" },
+  // Committee
   { name: "Dr. Brandon Carp", title: "President & Founder", group: "Committee", initials: "BC" },
-  { name: "Add a committee member", title: "Role to confirm", group: "Committee", initials: "AS", placeholder: true },
-  { name: "Add a team member", title: "Role to confirm", group: "Team", initials: "TM", placeholder: true },
-  { name: "Add a team member", title: "Role to confirm", group: "Team", initials: "TM", placeholder: true },
-  { name: "Add a patron", title: "Senior figure who backs ASME's mission", group: "Patron", initials: "PA", placeholder: true },
-  { name: "Add a patron", title: "Senior figure who backs ASME's mission", group: "Patron", initials: "PA", placeholder: true },
+  { name: "Dr. Anna Barker", title: "Company Secretary", group: "Committee", initials: "AB" },
+  { name: "Dr. Lior Rauchberger", title: "Treasurer", group: "Committee", initials: "LR" },
+  { name: "Dr. Simon Kos", title: "Committee Member", group: "Committee", initials: "SK" },
+  { name: "Dr. Anu Ganugapati", title: "Committee Member", group: "Committee", initials: "AG" },
+  // Patrons & ambassadors
+  { name: "Dr. Sam Hupert", title: "Ambassador", group: "Patron", initials: "SH" },
+  { name: "Dr. Katherine Giles", title: "Ambassador", group: "Patron", initials: "KG" },
 ];
 
 /** Advocacy / Our Positions. Placeholder statements for now. */
 export type Position = { title: string; summary: string; placeholder?: boolean };
 export const positions: Position[] = [
   {
-    title: "Clinician-led innovation",
-    summary: "ASME's stance on why frontline clinicians should be central to designing and deploying healthcare innovation.",
-    placeholder: true,
+    title: "A CPD home for clinician innovators",
+    summary: "ASME advocates for a suitable CPD Home so that entrepreneurship and innovation activities can count toward AHPRA accreditation and registration.",
   },
   {
-    title: "Pathways beyond clinical practice",
-    summary: "Our position on recognising entrepreneurship, industry, and innovation as legitimate parts of a clinical career.",
-    placeholder: true,
+    title: "Backing clinical entrepreneurship",
+    summary: "We support the Australian Clinical Entrepreneur Program (AUSCEP) and the clinicians building ventures through it.",
+  },
+  {
+    title: "Entrepreneurship in the medical curriculum",
+    summary: "We work with medical schools to introduce entrepreneurship and innovation into the curriculum.",
   },
 ];
 
@@ -592,9 +600,16 @@ export const programsList: ProgramItem[] = [
   {
     name: "AUSCEP",
     tagline: "The Australian Clinical Entrepreneur Program",
-    body: "Our flagship 12-month, cohort-based program delivered with MTPConnect. Eight workshops, mentorship, and a showcase to investors and partners.",
+    body: "Our flagship 12-month, part-time program delivered with MTPConnect. 120 clinicians across VIC, NSW, and WA took part in Cohorts 1 and 2, combining clinical practice with entrepreneurial fundamentals, mentorship, and a showcase to investors and partners.",
     status: "Cohort based",
     href: "#auscep",
+  },
+  {
+    name: "Internship program",
+    tagline: "Placements in startups, VC, consulting, and corporates",
+    body: "Structured placements that put clinicians inside health-tech companies, investment firms, consultancies, and corporates where clinical credibility is a moat. Currently in development.",
+    status: "Coming soon",
+    href: "/community",
   },
   {
     name: "SPARC",
@@ -602,14 +617,6 @@ export const programsList: ProgramItem[] = [
     body: "A shorter, hands-on program for clinicians testing an early idea. Details to be confirmed.",
     status: "Coming soon",
     href: "#",
-    placeholder: true,
-  },
-  {
-    name: "Internship program",
-    tagline: "Placements in startups, VC, consulting, and corporates",
-    body: "Structured placements that put clinicians inside health-tech companies, investment firms, and consultancies where clinical credibility is a moat.",
-    status: "Open",
-    href: "/community",
     placeholder: true,
   },
 ];

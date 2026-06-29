@@ -44,6 +44,9 @@ export function Footer() {
             <p className="mt-6 text-xs uppercase tracking-[0.18em] text-fg-subtle">
               {site.fullName}
             </p>
+            <p className="mt-2 text-xs text-fg-subtle">
+              ACNC registered charity &middot; ABN 41 664 194 307
+            </p>
           </div>
 
           <div className="md:col-span-7 grid grid-cols-2 gap-8 sm:grid-cols-12">

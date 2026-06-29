@@ -30,6 +30,9 @@ export default function AboutPage() {
           <Reveal className="max-w-3xl">
             <span className="eyebrow">Our story &amp; mission</span>
             <h2 className="h-display mt-3 text-display-lg balance">Why this society exists.</h2>
+            <p className="mt-6 text-xl leading-relaxed text-fg pretty">
+              ASME was founded on a simple belief: clinicians deserve a home where their passion for innovation is understood, supported, and amplified.
+            </p>
             <div className="mt-6 space-y-5">
               {manifesto.body.map((p) => (
                 <p key={p} className="text-lg leading-relaxed text-fg-muted pretty">
