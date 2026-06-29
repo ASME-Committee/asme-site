@@ -49,8 +49,6 @@ export function Nav() {
         <div className="flex items-center gap-2">
           <ButtonLink
             href={site.joinUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             variant="primary"
             size="sm"
             className="hidden sm:inline-flex"
@@ -98,8 +96,6 @@ export function Nav() {
           ))}
           <ButtonLink
             href={site.joinUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             variant="primary"
             size="sm"

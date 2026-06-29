@@ -14,7 +14,7 @@ export const site = {
     "Build, invest, and shape the future of healthcare. Without leaving clinical practice behind.",
   url: "https://asme.org.au",
   email: "info@asme.org.au",
-  joinUrl: "https://airtable.com/appJvGdxRMBwIzthp/shrH2JDdg2Lf9xOvr",
+  joinUrl: "/join",
 } as const;
 
 export const nav = [
@@ -31,7 +31,7 @@ export const hero = {
   sub: "Doctors, nurses, allied health, pharmacists, students. Build, invest, and shape the future of healthcare without leaving clinical practice behind.",
   primaryCta: {
     label: "Join the community",
-    href: "https://airtable.com/appJvGdxRMBwIzthp/shrH2JDdg2Lf9xOvr",
+    href: "/join",
   },
   secondaryCta: { label: "Explore AUSCEP", href: "#auscep" },
   metrics: [
@@ -206,7 +206,7 @@ export const auscep = {
   ],
   cta: {
     label: "Apply for the next cohort",
-    href: "https://airtable.com/appJvGdxRMBwIzthp/shrH2JDdg2Lf9xOvr",
+    href: "/join",
   },
 } as const;
 
