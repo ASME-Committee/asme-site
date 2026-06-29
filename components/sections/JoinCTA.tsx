@@ -56,8 +56,6 @@ export function JoinCTA() {
           <div className="mt-10 flex justify-center">
             <ButtonLink
               href={site.joinUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               size="lg"
               className="bg-white text-brand-ink hover:bg-white/90 shadow-lift"
             >
