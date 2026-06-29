@@ -18,11 +18,12 @@ export const site = {
 } as const;
 
 export const nav = [
-  { label: "What we do", href: "/#what" },
-  { label: "Pathways", href: "/#pathways" },
-  { label: "AUSCEP", href: "/#auscep" },
-  { label: "Community", href: "/#community" },
-  { label: "Insights", href: "/blog" },
+  { label: "About", href: "/about" },
+  { label: "Programs", href: "/programs" },
+  { label: "Events", href: "/events" },
+  { label: "Resources", href: "/resources" },
+  { label: "Community", href: "/community" },
+  { label: "Partners", href: "/partners" },
 ] as const;
 
 export const hero = {
@@ -498,5 +499,146 @@ export const endorsements: Endorsement[] = [
       "ASME is a key piece of the jigsaw, engaging coalface clinicians in the innovations that will drive tomorrow.",
     name: "Professor Fiona Wood AM",
     role: "Director, Burns WA. Inventor of Spray on Skin",
+  },
+];
+
+/* ------------------------------------------------------------------ *
+ * Phase 1 redesign content. Items flagged `placeholder: true` are
+ * scaffolding for the six-tab structure; replace the copy and add real
+ * names, photos, and links before launch.
+ * ------------------------------------------------------------------ */
+
+/** The "why join" set surfaced on Home and Community. Free membership. */
+export const memberBenefits = [
+  {
+    title: "A clinician network",
+    body: "A peer group of clinician founders, operators, investors, and advisors. Warm intros, not cold outreach.",
+    glyph: "network",
+  },
+  {
+    title: "Programs like AUSCEP",
+    body: "Application-only programs that take you from idea to first cheque to scaled company.",
+    glyph: "compass",
+  },
+  {
+    title: "Events and high-signal rooms",
+    body: "Founder dinners, roundtables, pitch nights, and clinical-investor matchings across the country.",
+    glyph: "spark",
+  },
+  {
+    title: "CPD and AHPRA",
+    body: "Participation can contribute to continuing professional development and help you maintain registration.",
+    glyph: "shield",
+  },
+  {
+    title: "The members newsletter",
+    body: "Field notes, opportunities, and founder stories, sent to your inbox. Yours the moment you join.",
+    glyph: "mail",
+  },
+] as const;
+
+/** Personas surfaced on Community ("who it's for"). */
+export const personas = [
+  { title: "Founder", body: "You have spotted a wedge and want co-founders, capital, and first customers." },
+  { title: "Intrapreneur", body: "You are driving change inside a hospital, health service, or company." },
+  { title: "Clinician-investor", body: "You want clinical pattern matching at the cap table and vetted deal flow." },
+  { title: "Student", body: "You are early, curious, and want a map for what comes after the training years." },
+] as const;
+
+/** People behind ASME. Brandon Carp is confirmed; the rest are placeholders. */
+export type Person = {
+  name: string;
+  title: string;
+  group: "Team" | "Committee" | "Patron";
+  initials: string;
+  placeholder?: boolean;
+};
+
+export const people: Person[] = [
+  { name: "Dr. Brandon Carp", title: "President & Founder", group: "Committee", initials: "BC" },
+  { name: "Add a committee member", title: "Role to confirm", group: "Committee", initials: "AS", placeholder: true },
+  { name: "Add a team member", title: "Role to confirm", group: "Team", initials: "TM", placeholder: true },
+  { name: "Add a team member", title: "Role to confirm", group: "Team", initials: "TM", placeholder: true },
+  { name: "Add a patron", title: "Senior figure who backs ASME's mission", group: "Patron", initials: "PA", placeholder: true },
+  { name: "Add a patron", title: "Senior figure who backs ASME's mission", group: "Patron", initials: "PA", placeholder: true },
+];
+
+/** Advocacy / Our Positions. Placeholder statements for now. */
+export type Position = { title: string; summary: string; placeholder?: boolean };
+export const positions: Position[] = [
+  {
+    title: "Clinician-led innovation",
+    summary: "ASME's stance on why frontline clinicians should be central to designing and deploying healthcare innovation.",
+    placeholder: true,
+  },
+  {
+    title: "Pathways beyond clinical practice",
+    summary: "Our position on recognising entrepreneurship, industry, and innovation as legitimate parts of a clinical career.",
+    placeholder: true,
+  },
+];
+
+/** Programs surfaced on the Programs page. AUSCEP detail lives in `auscep`. */
+export type ProgramItem = {
+  name: string;
+  tagline: string;
+  body: string;
+  status: "Open" | "Cohort based" | "Coming soon";
+  href: string;
+  placeholder?: boolean;
+};
+
+export const programsList: ProgramItem[] = [
+  {
+    name: "AUSCEP",
+    tagline: "The Australian Clinical Entrepreneur Program",
+    body: "Our flagship 12-month, cohort-based program delivered with MTPConnect. Eight workshops, mentorship, and a showcase to investors and partners.",
+    status: "Cohort based",
+    href: "#auscep",
+  },
+  {
+    name: "SPARC",
+    tagline: "Short-form innovation sprint",
+    body: "A shorter, hands-on program for clinicians testing an early idea. Details to be confirmed.",
+    status: "Coming soon",
+    href: "#",
+    placeholder: true,
+  },
+  {
+    name: "Internship program",
+    tagline: "Placements in startups, VC, consulting, and corporates",
+    body: "Structured placements that put clinicians inside health-tech companies, investment firms, and consultancies where clinical credibility is a moat.",
+    status: "Open",
+    href: "/community",
+    placeholder: true,
+  },
+];
+
+/** Partnership tiers for the Partners page. Placeholder commercial detail. */
+export type PartnerTier = {
+  name: string;
+  blurb: string;
+  features: string[];
+  placeholder?: boolean;
+};
+
+export const partnerTiers: PartnerTier[] = [
+  {
+    name: "Principal partner",
+    blurb: "Lead the ecosystem alongside ASME with year-round presence across programs, events, and content.",
+    features: ["Naming on a flagship program", "Speaking slots at marquee events", "Logo on Home and About", "Access to the member network"],
+    placeholder: true,
+  },
+  {
+    name: "Program partner",
+    blurb: "Back a specific program such as AUSCEP and connect directly with clinician founders in the cohort.",
+    features: ["Program co-branding", "Cohort showcase access", "Logo on Partners page", "Two event passes"],
+    placeholder: true,
+  },
+  {
+    name: "Ecosystem partner",
+    blurb: "Join the community of universities, funds, and accelerators building Australian healthcare's next decade.",
+    features: ["Logo on Partners page", "Event listings", "Cross-promotion", "Friends of ASME network"],
+    placeholder: true,
   },
 ];
