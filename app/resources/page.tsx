@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     "The ASME content hub: news and updates, the newsletter archive, the webinar and video library, member and founder stories, and toolkits for clinician founders.",
 };
 
-const archives = [
+const archives: { title: string; body: string; href: string; image?: string }[] = [
   {
     title: "Newsletter archive",
     body: "Every past issue, browsable and shareable, each with its own URL. Connect the Mailchimp archive or import issues here.",
@@ -23,6 +24,7 @@ const archives = [
     title: "Webinar & video library",
     body: "Recordings with titles, speakers, dates, and short summaries. Add embeds as recordings are published.",
     href: "#",
+    image: "/photos/webinar-clinician-plus.png",
   },
   {
     title: "Member & founder stories",
@@ -60,13 +62,26 @@ export default function ResourcesPage() {
               <Reveal key={a.title} delay={i * 0.05}>
                 <Link
                   href={a.href}
-                  className="card card-hover group flex h-full flex-col p-7"
+                  className="card card-hover group flex h-full flex-col overflow-hidden"
                 >
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-display text-xl tracking-tight text-fg">{a.title}</h3>
-                    <ArrowUpRight className="h-4 w-4 text-fg-muted transition-colors group-hover:text-brand-blue" />
+                  {a.image && (
+                    <div className="relative aspect-[16/10] overflow-hidden border-b border-border bg-surface-subtle">
+                      <Image
+                        src={a.image}
+                        alt={a.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
+                    </div>
+                  )}
+                  <div className="flex flex-1 flex-col p-7">
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-display text-xl tracking-tight text-fg">{a.title}</h3>
+                      <ArrowUpRight className="h-4 w-4 text-fg-muted transition-colors group-hover:text-brand-blue" />
+                    </div>
+                    <p className="mt-3 text-sm leading-relaxed text-fg-muted pretty">{a.body}</p>
                   </div>
-                  <p className="mt-3 text-sm leading-relaxed text-fg-muted pretty">{a.body}</p>
                 </Link>
               </Reveal>
             ))}

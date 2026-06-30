@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Container } from "@/components/ui/Container";
@@ -23,6 +24,30 @@ export default function CommunityPage() {
         lead="Membership is free. The only thing to overcome is hesitation. Join the network, get into the next event, and meet the people building healthcare's next decade."
         cta={{ label: "Join (free)", href: site.joinUrl, external: true }}
       />
+
+      {/* Visual feature */}
+      <section className="relative pt-12 md:pt-16">
+        <Container>
+          <Reveal className="grid items-center gap-10 lg:grid-cols-2">
+            <div className="relative overflow-hidden rounded-3xl border border-border bg-surface-subtle">
+              <Image
+                src="/photos/clinician-collaboration.png"
+                alt="Clinicians collaborating on healthcare ideas"
+                width={1200}
+                height={1200}
+                className="h-full w-full object-cover"
+                priority
+              />
+            </div>
+            <div>
+              <h2 className="h-display text-display-lg balance">A society, not a mailing list.</h2>
+              <p className="mt-5 text-lg leading-relaxed text-fg-muted pretty">
+                ASME is doctors, nurses, allied health, pharmacists, and students who want to build. You will find collaborators, mentors, and people who have done it before. Membership is free, and the room is warm.
+              </p>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
 
       <Benefits heading="Why join" />
 
