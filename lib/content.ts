@@ -565,6 +565,10 @@ export const people: Person[] = [
   { name: "Dr. Simon Kos", title: "Committee Member", group: "Committee", initials: "SK" },
   { name: "Dr. Anu Ganugapati", title: "Committee Member", group: "Committee", initials: "AG" },
   // Patrons & ambassadors
+  { name: "Prof. Fiona Wood AM", title: "Director, Burns WA", group: "Patron", initials: "FW" },
+  { name: "Prof. Jane Gunn", title: "Dean of Medicine, University of Melbourne", group: "Patron", initials: "JG" },
+  { name: "Dr. Katie Allen", title: "Paediatrician & former Federal MP", group: "Patron", initials: "KA" },
+  { name: "Dr. Grant Blashki", title: "Lead Clinical Advisor, Beyond Blue", group: "Patron", initials: "GB" },
   { name: "Dr. Sam Hupert", title: "Ambassador", group: "Patron", initials: "SH" },
   { name: "Dr. Katherine Giles", title: "Ambassador", group: "Patron", initials: "KG" },
 ];
