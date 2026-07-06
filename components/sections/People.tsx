@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Linkedin } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { people, type Person } from "@/lib/content";
@@ -66,6 +67,18 @@ export function People() {
                         )}
                         <h4 className="mt-5 font-medium text-fg">{p.name}</h4>
                         <p className="mt-0.5 text-sm text-fg-subtle">{p.title}</p>
+                        {p.linkedin && (
+                          <a
+                            href={p.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${p.name} on LinkedIn`}
+                            className="mt-3 inline-flex items-center gap-1.5 text-sm text-fg-muted transition-colors hover:text-brand-blue"
+                          >
+                            <Linkedin className="h-4 w-4" />
+                            LinkedIn
+                          </a>
+                        )}
                       </article>
                     </Reveal>
                   ))}
