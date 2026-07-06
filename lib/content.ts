@@ -638,9 +638,12 @@ export type PartnerTier = {
 export const founderMessage = {
   title: "Why I Founded ASME",
   paragraphs: [
-    "Early in my career I noticed something that never left me. The people who understand where healthcare breaks are the ones standing in it every day. Clinicians see the gaps, feel the friction, and carry the ideas that could fix them. Yet almost nothing in our training tells us what to do with those ideas.",
-    "I founded ASME to change that. I wanted a home for doctors, nurses, allied health professionals, pharmacists, and students who believe they can build the solutions, not just describe the problems. A place where entrepreneurship and innovation are treated as a legitimate part of a clinical career, not a departure from it.",
-    "We are here to give clinicians the network, the programs, and the confidence to make an impact at scale, without leaving clinical practice behind. If you have ever thought there has to be a better way, you are exactly who this society is for.",
+    "When I began the journey of building my business Unified Healthcare Group (UHG) I wasn't following a well-worn path. In many ways, I was creating my own. There were very few examples of doctors building healthcare businesses, no community of like-minded clinicians, and no roadmap to help navigate the challenges of innovation and entrepreneurship. Much of what I learned came through experience, perseverance and more than a few mistakes.",
+    "Looking back, I often wondered how many other clinicians had ideas with the potential to improve healthcare but never knew where to begin.",
+    "That question became the inspiration for founding The Australian Society for Medical Entrepreneurship & Innovation (ASME) in 2023.",
+    "I have always believed that clinicians are uniquely positioned to improve healthcare. Every day, they work at the coalface of our health system. They understand patients, experience the frustrations of the current system and recognise opportunities that others simply cannot see. They are often the first to identify problems worth solving and are ideally placed to help create the solutions.",
+    "Yet innovation, entrepreneurship and enterprise have traditionally been viewed as something separate from being a clinician, rather than an extension of it. I believed that needed to change. Whether someone improves a process within their hospital, translates research into practice, develops a new technology, starts a health company or leads system wide change, they should feel empowered to pursue those opportunities at any stage of their career.",
+    "My hope is that ASME helps create a future where every clinician feels inspired and supported to turn ideas into impact, and where innovation, entrepreneurship and enterprise become a natural part of what it means to be a clinician.",
   ],
   name: "Dr Brandon Carp",
   role: "President and Founder, ASME",
