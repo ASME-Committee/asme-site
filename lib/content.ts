@@ -587,26 +587,29 @@ export type Person = {
   title: string;
   group: "Team" | "Committee" | "Patron";
   initials: string;
+  /** Path under public/ (rendered via asset()); falls back to initials if unset. */
+  photo?: string;
   placeholder?: boolean;
 };
 
 export const people: Person[] = [
   // Team
-  { name: "Matt Hallam", title: "Chief Executive Officer", group: "Team", initials: "MH" },
-  { name: "Masha Pelipas", title: "AUSCEP Lead", group: "Team", initials: "MP" },
+  { name: "Matt Hallam", title: "Chief Executive Officer", group: "Team", initials: "MH", photo: "/team/matt-hallam.png" },
+  { name: "Masha Pelipas", title: "AUSCEP Lead", group: "Team", initials: "MP", photo: "/team/masha-pelipas.png" },
   // Committee
-  { name: "Dr. Brandon Carp", title: "President & Founder", group: "Committee", initials: "BC" },
-  { name: "Dr. Anna Barker", title: "Company Secretary", group: "Committee", initials: "AB" },
-  { name: "Dr. Lior Rauchberger", title: "Treasurer", group: "Committee", initials: "LR" },
+  { name: "Dr. Brandon Carp", title: "President & Founder", group: "Committee", initials: "BC", photo: "/team/brandon-carp.png" },
+  { name: "Dr. Anna Barker", title: "Company Secretary", group: "Committee", initials: "AB", photo: "/team/anna-barker.jpg" },
+  { name: "Dr. Lior Rauchberger", title: "Treasurer", group: "Committee", initials: "LR", photo: "/team/lior-rauchberger.png" },
+  // Simon Kos: awaiting a preferred alternative photo (initials for now).
   { name: "Dr. Simon Kos", title: "Committee Member", group: "Committee", initials: "SK" },
-  { name: "Dr. Anu Ganugapati", title: "Committee Member", group: "Committee", initials: "AG" },
+  { name: "Dr. Anu Ganugapati", title: "Committee Member", group: "Committee", initials: "AG", photo: "/team/anu-ganugapati.jpeg" },
   // Patrons & ambassadors
   { name: "Prof. Fiona Wood AM", title: "Director, Burns WA", group: "Patron", initials: "FW" },
   { name: "Prof. Jane Gunn", title: "Dean of Medicine, University of Melbourne", group: "Patron", initials: "JG" },
   { name: "Dr. Katie Allen", title: "Paediatrician & former Federal MP", group: "Patron", initials: "KA" },
   { name: "Dr. Grant Blashki", title: "Lead Clinical Advisor, Beyond Blue", group: "Patron", initials: "GB" },
-  { name: "Dr. Sam Hupert", title: "Ambassador", group: "Patron", initials: "SH" },
-  { name: "Dr. Katherine Giles", title: "Ambassador", group: "Patron", initials: "KG" },
+  { name: "Dr. Sam Hupert", title: "Ambassador", group: "Patron", initials: "SH", photo: "/team/sam-hupert.jpeg" },
+  { name: "Dr. Katharine Giles", title: "Ambassador", group: "Patron", initials: "KG", photo: "/team/katharine-giles.jpg" },
 ];
 
 /** Advocacy / Our Positions. Placeholder statements for now. */
