@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
-import { Search } from "lucide-react";
+import { Search, Linkedin } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { startups } from "@/lib/startups";
@@ -73,6 +73,18 @@ export function StartupDirectory() {
                   <p className="mt-2 text-sm leading-relaxed text-fg-muted pretty">
                     {s.description}
                   </p>
+                  {s.linkedin && (
+                    <a
+                      href={s.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${s.name} on LinkedIn`}
+                      className="mt-3 inline-flex items-center gap-1.5 text-sm text-fg-muted transition-colors hover:text-brand-blue"
+                    >
+                      <Linkedin className="h-4 w-4" />
+                      LinkedIn
+                    </a>
+                  )}
                 </div>
               </article>
             ))}
