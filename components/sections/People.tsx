@@ -1,6 +1,9 @@
+import Image from "next/image";
+import { Linkedin } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { people, type Person } from "@/lib/content";
+import { asset } from "@/lib/asset";
 import { cn } from "@/lib/cn";
 
 const groups: { key: Person["group"]; label: string; blurb: string }[] = [
@@ -39,19 +42,43 @@ export function People() {
                           p.placeholder && "border-dashed opacity-70",
                         )}
                       >
-                        <div
-                          aria-hidden
-                          className={cn(
-                            "flex h-12 w-12 items-center justify-center rounded-full text-sm font-semibold tracking-tight text-white shadow-soft",
-                            p.placeholder
-                              ? "bg-fg-subtle"
-                              : "bg-[radial-gradient(circle_at_30%_30%,#2B58E0,#1B3FB4)]",
-                          )}
-                        >
-                          {p.initials}
-                        </div>
+                        {p.photo ? (
+                          <div className="relative h-16 w-16 overflow-hidden rounded-full border border-border shadow-soft">
+                            <Image
+                              src={asset(p.photo)}
+                              alt={p.name}
+                              fill
+                              sizes="64px"
+                              className="object-cover grayscale"
+                            />
+                          </div>
+                        ) : (
+                          <div
+                            aria-hidden
+                            className={cn(
+                              "flex h-16 w-16 items-center justify-center rounded-full text-base font-semibold tracking-tight text-white shadow-soft",
+                              p.placeholder
+                                ? "bg-fg-subtle"
+                                : "bg-[radial-gradient(circle_at_30%_30%,#2B58E0,#1B3FB4)]",
+                            )}
+                          >
+                            {p.initials}
+                          </div>
+                        )}
                         <h4 className="mt-5 font-medium text-fg">{p.name}</h4>
                         <p className="mt-0.5 text-sm text-fg-subtle">{p.title}</p>
+                        {p.linkedin && (
+                          <a
+                            href={p.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${p.name} on LinkedIn`}
+                            className="mt-3 inline-flex items-center gap-1.5 text-sm text-fg-muted transition-colors hover:text-brand-blue"
+                          >
+                            <Linkedin className="h-4 w-4" />
+                            LinkedIn
+                          </a>
+                        )}
                       </article>
                     </Reveal>
                   ))}
