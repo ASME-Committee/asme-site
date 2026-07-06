@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { PartnerTiers } from "@/components/sections/PartnerTiers";
 import { partners, site } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Partners",
@@ -41,7 +42,7 @@ export default function PartnersPage() {
                   className="card card-hover flex h-28 items-center justify-center p-6 opacity-80 transition-opacity hover:opacity-100"
                 >
                   <Image
-                    src={p.logo}
+                    src={asset(p.logo)}
                     alt={p.name}
                     width={200}
                     height={64}

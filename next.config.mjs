@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 
 // For GitHub Pages project sites the app is served from /<repo>, so the CI
-// build sets PAGES_BASE_PATH=/asme-site. Local dev and a future custom domain
-// (served at the root) leave it empty.
-const basePath = process.env.PAGES_BASE_PATH || "";
+// build sets NEXT_PUBLIC_BASE_PATH=/asme-site. Local dev and a future custom
+// domain (served at the root) leave it empty. NEXT_PUBLIC_ so the same value is
+// available to the asset() helper in the client bundle.
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const nextConfig = {
   reactStrictMode: true,

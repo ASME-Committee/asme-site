@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { partners } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 /**
  * Slim band that lives between the hero and the manifesto.
@@ -37,7 +38,7 @@ export function Partners() {
                 className="mx-10 flex h-28 w-56 shrink-0 items-center justify-center opacity-80 transition-opacity hover:opacity-100"
               >
                 <Image
-                  src={p.logo}
+                  src={asset(p.logo)}
                   alt={p.name}
                   width={320}
                   height={112}

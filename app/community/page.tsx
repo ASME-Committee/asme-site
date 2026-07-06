@@ -8,6 +8,7 @@ import { Benefits } from "@/components/sections/Benefits";
 import { MemberSpotlights } from "@/components/sections/MemberSpotlights";
 import { JoinCTA } from "@/components/sections/JoinCTA";
 import { personas, site } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Community",
@@ -31,7 +32,7 @@ export default function CommunityPage() {
           <Reveal className="grid items-center gap-10 lg:grid-cols-2">
             <div className="relative overflow-hidden rounded-3xl border border-border bg-surface-subtle">
               <Image
-                src="/photos/clinician-collaboration.png"
+                src={asset("/photos/clinician-collaboration.png")}
                 alt="Clinicians collaborating on healthcare ideas"
                 width={1200}
                 height={1200}
