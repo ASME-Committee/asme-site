@@ -602,7 +602,7 @@ export const people: Person[] = [
   { name: "Dr. Anna Barker", title: "Company Secretary", group: "Committee", initials: "AB", photo: "/team/anna-barker.jpg", linkedin: "https://www.linkedin.com/in/anna-barker-64649a60/" },
   { name: "Dr. Lior Rauchberger", title: "Treasurer", group: "Committee", initials: "LR", photo: "/team/lior-rauchberger.png", linkedin: "https://www.linkedin.com/in/lior-rauchberger-2401b64/" },
   { name: "Dr. Simon Kos", title: "Committee Member", group: "Committee", initials: "SK", photo: "/team/simon-kos.png", linkedin: "https://www.linkedin.com/in/simonkos/" },
-  { name: "Dr. Anu Ganugapati", title: "Committee Member", group: "Committee", initials: "AG", photo: "/team/anu-ganugapati.jpeg", linkedin: "https://www.linkedin.com/in/dr-anu-ganugapati-3b330a248/" },
+  { name: "Dr. Anu Ganugapati", title: "Committee Member", group: "Committee", initials: "AG", photo: "/team/anu-ganugapati.jpeg", linkedin: "https://www.linkedin.com/in/dr-anu-ganugapati-🩺-3b330a248/" },
   // Patrons & ambassadors
   { name: "Prof. Fiona Wood AM", title: "Director, Burns WA", group: "Patron", initials: "FW", photo: "/team/fiona-wood.jpg" },
   { name: "Prof. Jane Gunn", title: "Dean of Medicine, University of Melbourne", group: "Patron", initials: "JG" },
