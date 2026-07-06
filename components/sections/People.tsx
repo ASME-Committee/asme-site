@@ -49,7 +49,7 @@ export function People() {
                               alt={p.name}
                               fill
                               sizes="64px"
-                              className="object-cover"
+                              className="object-cover grayscale"
                             />
                           </div>
                         ) : (
