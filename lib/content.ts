@@ -17,13 +17,39 @@ export const site = {
   joinUrl: "https://airtable.com/appJvGdxRMBwIzthp/shrH2JDdg2Lf9xOvr",
 } as const;
 
-export const nav = [
-  { label: "What we do", href: "/#what" },
-  { label: "Pathways", href: "/#pathways" },
-  { label: "AUSCEP", href: "/#auscep" },
-  { label: "Community", href: "/#community" },
-  { label: "Insights", href: "/blog" },
-] as const;
+export type NavItem = {
+  label: string;
+  href: string;
+  children?: { label: string; href: string }[];
+};
+
+export const nav: NavItem[] = [
+  {
+    label: "About",
+    href: "/about",
+    children: [
+      { label: "Our story", href: "/about#story" },
+      { label: "Our people", href: "/about#people" },
+      { label: "Advocacy", href: "/about#positions" },
+      { label: "Endorsements", href: "/about#endorsements" },
+      { label: "Partners", href: "/partners" },
+    ],
+  },
+  { label: "Programs", href: "/programs" },
+  { label: "Events", href: "/events" },
+  {
+    label: "Insights",
+    href: "/insights",
+    children: [
+      { label: "Newsletters", href: "/insights" },
+      { label: "Webinars (Clinician+)", href: "/insights#videos" },
+      { label: "Interviews", href: "/blog" },
+      { label: "Podcasts", href: "/insights" },
+      { label: "Videos", href: "/insights#videos" },
+    ],
+  },
+  { label: "Community", href: "/community" },
+];
 
 export const hero = {
   eyebrow: "For clinicians who build",
@@ -200,7 +226,7 @@ export const auscep = {
     },
   ],
   outcomes: [
-    "100+ Australian clinicians supported since 2022",
+    "120 clinicians across VIC, NSW and WA in Cohorts 1 and 2",
     "$20M+ raised by participants",
     "18,000 lives impacted across pilots and rollouts",
   ],
@@ -362,14 +388,25 @@ export const testimonials: Testimonial[] = [
 
 export type Eventish = {
   title: string;
-  type: "Dinner" | "Roundtable" | "Pitch night" | "Workshop" | "Demo day";
+  type: "Dinner" | "Roundtable" | "Pitch night" | "Workshop" | "Demo day" | "Hackathon";
   city: "Sydney" | "Melbourne" | "Brisbane" | "Perth" | "Adelaide" | "Online";
   date: string;
   blurb: string;
   upcoming: boolean;
+  href?: string;
 };
 
 export const events: Eventish[] = [
+  {
+    title: "Healthcare x AI Hackathon",
+    type: "Hackathon",
+    city: "Sydney",
+    date: "Jul 18-19, 2026",
+    blurb:
+      "A healthcare and AI hackathon at Stone & Chalk. Grand prize is $10,000 USD in OpenAI API credits plus 3 months of Base44 builder tier. Come build something in health, or bring what you are already building.",
+    upcoming: true,
+    href: "https://luma.com/mlai-8obe",
+  },
   {
     title: "Founder & Investor dinner",
     type: "Dinner",
@@ -498,5 +535,186 @@ export const endorsements: Endorsement[] = [
       "ASME is a key piece of the jigsaw, engaging coalface clinicians in the innovations that will drive tomorrow.",
     name: "Professor Fiona Wood AM",
     role: "Director, Burns WA. Inventor of Spray on Skin",
+  },
+];
+
+/* ------------------------------------------------------------------ *
+ * Phase 1 redesign content. Items flagged `placeholder: true` are
+ * scaffolding for the six-tab structure; replace the copy and add real
+ * names, photos, and links before launch.
+ * ------------------------------------------------------------------ */
+
+/** The "why join" set surfaced on Home and Community. Free membership. */
+export const memberBenefits = [
+  {
+    title: "A clinician network",
+    body: "A peer group of clinician founders, operators, investors, and advisors. Warm intros, not cold outreach.",
+    glyph: "network",
+  },
+  {
+    title: "Programs like AUSCEP",
+    body: "Application-only programs that take you from idea to first cheque to scaled company.",
+    glyph: "compass",
+  },
+  {
+    title: "Events and high-signal rooms",
+    body: "Founder dinners, roundtables, pitch nights, and clinical-investor matchings across the country.",
+    glyph: "spark",
+  },
+  {
+    title: "CPD and AHPRA",
+    body: "Participation can contribute to continuing professional development and help you maintain registration.",
+    glyph: "shield",
+  },
+  {
+    title: "The members newsletter",
+    body: "Field notes, opportunities, and founder stories, sent to your inbox. Yours the moment you join.",
+    glyph: "mail",
+  },
+] as const;
+
+/** Personas surfaced on Community ("who it's for"). */
+export const personas = [
+  { title: "Founder", body: "You have spotted a wedge and want co-founders, capital, and first customers." },
+  { title: "Intrapreneur", body: "You are driving change inside a hospital, health service, or company." },
+  { title: "Clinician-investor", body: "You want clinical pattern matching at the cap table and vetted deal flow." },
+  { title: "Student", body: "You are early, curious, and want a map for what comes after the training years." },
+] as const;
+
+/** People behind ASME. Brandon Carp is confirmed; the rest are placeholders. */
+export type Person = {
+  name: string;
+  title: string;
+  group: "Team" | "Committee" | "Patron";
+  initials: string;
+  placeholder?: boolean;
+};
+
+export const people: Person[] = [
+  // Team
+  { name: "Matt Hallam", title: "Chief Executive Officer", group: "Team", initials: "MH" },
+  { name: "Masha Pelipas", title: "AUSCEP Lead", group: "Team", initials: "MP" },
+  // Committee
+  { name: "Dr. Brandon Carp", title: "President & Founder", group: "Committee", initials: "BC" },
+  { name: "Dr. Anna Barker", title: "Company Secretary", group: "Committee", initials: "AB" },
+  { name: "Dr. Lior Rauchberger", title: "Treasurer", group: "Committee", initials: "LR" },
+  { name: "Dr. Simon Kos", title: "Committee Member", group: "Committee", initials: "SK" },
+  { name: "Dr. Anu Ganugapati", title: "Committee Member", group: "Committee", initials: "AG" },
+  // Patrons & ambassadors
+  { name: "Prof. Fiona Wood AM", title: "Director, Burns WA", group: "Patron", initials: "FW" },
+  { name: "Prof. Jane Gunn", title: "Dean of Medicine, University of Melbourne", group: "Patron", initials: "JG" },
+  { name: "Dr. Katie Allen", title: "Paediatrician & former Federal MP", group: "Patron", initials: "KA" },
+  { name: "Dr. Grant Blashki", title: "Lead Clinical Advisor, Beyond Blue", group: "Patron", initials: "GB" },
+  { name: "Dr. Sam Hupert", title: "Ambassador", group: "Patron", initials: "SH" },
+  { name: "Dr. Katherine Giles", title: "Ambassador", group: "Patron", initials: "KG" },
+];
+
+/** Advocacy / Our Positions. Placeholder statements for now. */
+export type Position = { title: string; summary: string; placeholder?: boolean };
+export const positions: Position[] = [
+  {
+    title: "A CPD home for clinician innovators",
+    summary: "ASME advocates for a suitable CPD Home so that entrepreneurship and innovation activities can count toward AHPRA accreditation and registration.",
+  },
+  {
+    title: "Backing clinical entrepreneurship",
+    summary: "We support the Australian Clinical Entrepreneur Program (AUSCEP) and the clinicians building ventures through it.",
+  },
+  {
+    title: "Entrepreneurship in the medical curriculum",
+    summary: "We work with medical schools to introduce entrepreneurship and innovation into the curriculum.",
+  },
+];
+
+/** Programs surfaced on the Programs page. AUSCEP detail lives in `auscep`. */
+export type ProgramItem = {
+  name: string;
+  tagline: string;
+  body: string;
+  status: "Open" | "Cohort based" | "Coming soon";
+  href: string;
+  placeholder?: boolean;
+};
+
+export const programsList: ProgramItem[] = [
+  {
+    name: "AUSCEP",
+    tagline: "The Australian Clinical Entrepreneur Program",
+    body: "Our flagship 12-month, part-time program delivered with MTPConnect. 120 clinicians across VIC, NSW, and WA took part in Cohorts 1 and 2, combining clinical practice with entrepreneurial fundamentals, mentorship, and a showcase to investors and partners.",
+    status: "Cohort based",
+    href: "#auscep",
+  },
+  {
+    name: "Internship program",
+    tagline: "Placements in startups, VC, consulting, and corporates",
+    body: "Structured placements that put clinicians inside health-tech companies, investment firms, consultancies, and corporates where clinical credibility is a moat. Currently in development.",
+    status: "Coming soon",
+    href: "/community",
+  },
+  {
+    name: "SPARC",
+    tagline: "Short-form innovation sprint",
+    body: "A shorter, hands-on program for clinicians testing an early idea. Details to be confirmed.",
+    status: "Coming soon",
+    href: "#",
+    placeholder: true,
+  },
+];
+
+/** Partnership tiers for the Partners page. Placeholder commercial detail. */
+export type PartnerTier = {
+  name: string;
+  blurb: string;
+  features: string[];
+  placeholder?: boolean;
+};
+
+/** Personal message from the founder for the About page. DRAFT from Brandon's
+ *  existing words and mission statement. Edit, shorten, or replace freely. */
+export const founderMessage = {
+  title: "Why I Founded ASME",
+  paragraphs: [
+    "When I began the journey of building my business Unified Healthcare Group (UHG) I wasn't following a well-worn path. In many ways, I was creating my own. There were very few examples of doctors building healthcare businesses, no community of like-minded clinicians, and no roadmap to help navigate the challenges of innovation and entrepreneurship. Much of what I learned came through experience, perseverance and more than a few mistakes.",
+    "Looking back, I often wondered how many other clinicians had ideas with the potential to improve healthcare but never knew where to begin.",
+    "That question became the inspiration for founding The Australian Society for Medical Entrepreneurship & Innovation (ASME) in 2023.",
+    "I have always believed that clinicians are uniquely positioned to improve healthcare. Every day, they work at the coalface of our health system. They understand patients, experience the frustrations of the current system and recognise opportunities that others simply cannot see. They are often the first to identify problems worth solving and are ideally placed to help create the solutions.",
+    "Yet innovation, entrepreneurship and enterprise have traditionally been viewed as something separate from being a clinician, rather than an extension of it. I believed that needed to change. Whether someone improves a process within their hospital, translates research into practice, develops a new technology, starts a health company or leads system wide change, they should feel empowered to pursue those opportunities at any stage of their career.",
+    "My hope is that ASME helps create a future where every clinician feels inspired and supported to turn ideas into impact, and where innovation, entrepreneurship and enterprise become a natural part of what it means to be a clinician.",
+  ],
+  name: "Dr Brandon Carp",
+  role: "President and Founder, ASME",
+} as const;
+
+/** Featured videos for the Insights hub. */
+export type Video = { title: string; youtubeId: string; start?: number; blurb: string };
+export const videos: Video[] = [
+  {
+    title: "On why healthcare needs clinician entrepreneurs",
+    youtubeId: "BpSRQdUilKE",
+    // TODO: set `start` to the second the speech proper begins, to skip the personal intro.
+    start: 0,
+    blurb:
+      "University of Melbourne graduation address, Faculty of Medicine, Dentistry and Health Sciences, 2023.",
+  },
+];
+
+export const partnerTiers: PartnerTier[] = [
+  {
+    name: "Principal partner",
+    blurb: "Lead the ecosystem alongside ASME with year-round presence across programs, events, and content.",
+    features: ["Naming on a flagship program", "Speaking slots at marquee events", "Logo on Home and About", "Access to the member network"],
+    placeholder: true,
+  },
+  {
+    name: "Program partner",
+    blurb: "Back a specific program such as AUSCEP and connect directly with clinician founders in the cohort.",
+    features: ["Program co-branding", "Cohort showcase access", "Logo on Partners page", "Two event passes"],
+    placeholder: true,
+  },
+  {
+    name: "Ecosystem partner",
+    blurb: "Join the community of universities, funds, and accelerators building Australian healthcare's next decade.",
+    features: ["Logo on Partners page", "Event listings", "Cross-promotion", "Friends of ASME network"],
+    placeholder: true,
   },
 ];

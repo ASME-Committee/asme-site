@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { events } from "@/lib/content";
-import { MapPin, Calendar } from "lucide-react";
+import { MapPin, Calendar, ArrowUpRight } from "lucide-react";
 
 export function Events() {
   const upcoming = events.filter((e) => e.upcoming);
@@ -46,6 +46,17 @@ export function Events() {
                     {e.city}
                   </span>
                 </div>
+                {e.href && (
+                  <a
+                    href={e.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-fg transition-colors hover:text-brand-blue"
+                  >
+                    Register
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                )}
               </article>
             </Reveal>
           ))}

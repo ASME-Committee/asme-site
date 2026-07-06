@@ -80,10 +80,22 @@ function BackdropDecor() {
   const reduce = useReducedMotion();
 
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+    <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      {/* Slowly rotating aurora wash. A blurred conic gradient turning behind
+          everything gives the calm, flowing motion of a background video. */}
+      <motion.div
+        className="absolute left-1/2 top-[-40%] h-[150vh] w-[150vh] -translate-x-1/2 rounded-full opacity-30 blur-3xl"
+        style={{
+          background:
+            "conic-gradient(from 90deg, rgb(43 88 224 / 0.45), rgb(168 199 249 / 0.2), rgb(242 146 156 / 0.4), rgb(168 199 249 / 0.2), rgb(43 88 224 / 0.45))",
+        }}
+        animate={reduce ? undefined : { rotate: [0, 360] }}
+        transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
+      />
+
       {/* Faint dotted grid */}
       <div
-        className="absolute inset-0 opacity-[0.35]"
+        className="absolute inset-0 opacity-[0.3]"
         style={{
           backgroundImage:
             "radial-gradient(circle at 1px 1px, rgb(var(--fg) / 0.15) 1px, transparent 0)",
@@ -95,8 +107,8 @@ function BackdropDecor() {
         }}
       />
 
-      {/* Two slowly drifting gradient blobs. The pair is offset so they
-          chase each other, producing organic motion rather than a plain pulse. */}
+      {/* Three drifting, morphing colour blobs. Offset paths and durations make
+          them chase each other for organic, never-repeating flow. */}
       <motion.div
         className="absolute left-1/2 top-[-160px] h-[520px] w-[920px] -translate-x-1/2 rounded-full opacity-50 blur-3xl"
         style={{
@@ -106,11 +118,7 @@ function BackdropDecor() {
         animate={
           reduce
             ? undefined
-            : {
-                x: ["-8%", "8%", "-8%"],
-                y: ["-4%", "6%", "-4%"],
-                scale: [1, 1.08, 1],
-              }
+            : { x: ["-8%", "10%", "-8%"], y: ["-4%", "6%", "-4%"], scale: [1, 1.1, 1] }
         }
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -123,13 +131,34 @@ function BackdropDecor() {
         animate={
           reduce
             ? undefined
-            : {
-                x: ["10%", "-10%", "10%"],
-                y: ["6%", "-4%", "6%"],
-                scale: [1.05, 0.95, 1.05],
-              }
+            : { x: ["12%", "-12%", "12%"], y: ["6%", "-6%", "6%"], scale: [1.05, 0.92, 1.05] }
         }
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute left-[18%] top-[8%] h-[420px] w-[640px] rounded-full opacity-40 blur-3xl"
+        style={{
+          background:
+            "radial-gradient(circle at 50% 50%, rgb(168 199 249 / 0.5), transparent 60%)",
+        }}
+        animate={
+          reduce
+            ? undefined
+            : { x: ["-6%", "14%", "-6%"], y: ["8%", "-6%", "8%"], scale: [0.95, 1.12, 0.95] }
+        }
+        transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* Breathing luminous core keeps the headline area bright and legible
+          while still feeling alive. */}
+      <motion.div
+        className="absolute left-1/2 top-[34%] h-[60vh] w-[80vw] max-w-4xl -translate-x-1/2 -translate-y-1/2 rounded-full"
+        style={{
+          background:
+            "radial-gradient(circle, rgb(var(--surface) / 0.65), transparent 62%)",
+        }}
+        animate={reduce ? undefined : { opacity: [0.55, 0.8, 0.55], scale: [1, 1.06, 1] }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
       />
 
       {/* Soft fade to surface so the hero blends into the next section */}
