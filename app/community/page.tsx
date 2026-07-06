@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Benefits } from "@/components/sections/Benefits";
 import { MemberSpotlights } from "@/components/sections/MemberSpotlights";
+import { StartupDirectory } from "@/components/sections/StartupDirectory";
 import { JoinCTA } from "@/components/sections/JoinCTA";
 import { personas, site } from "@/lib/content";
 import { asset } from "@/lib/asset";
@@ -89,6 +90,8 @@ export default function CommunityPage() {
           </Reveal>
         </Container>
       </section>
+
+      <StartupDirectory />
 
       <JoinCTA />
     </PageShell>
