@@ -34,7 +34,7 @@ export default function EventsPage() {
               Online and in person.
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-fg-muted pretty">
-              Recordings of past webinars live in the Resources hub. Networking nights run in Sydney, Melbourne, and Brisbane. Members get first access to RSVPs.
+              Recordings of past webinars live in the Insights hub. Networking nights run in Sydney, Melbourne, and Brisbane. Members get first access to RSVPs.
             </p>
           </Reveal>
         </Container>

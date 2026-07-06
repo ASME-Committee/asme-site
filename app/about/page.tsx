@@ -6,7 +6,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { People } from "@/components/sections/People";
 import { Endorsements } from "@/components/sections/Endorsements";
 import { ImpactStats } from "@/components/sections/ImpactStats";
-import { manifesto, positions, site } from "@/lib/content";
+import { manifesto, positions, site, founderMessage } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -39,6 +39,39 @@ export default function AboutPage() {
                   {p}
                 </p>
               ))}
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* A message from the founder (draft) */}
+      <section id="founder" className="section relative">
+        <Container>
+          <Reveal className="mx-auto max-w-3xl">
+            <div className="card p-8 md:p-12">
+              <span className="eyebrow">A message from our founder</span>
+              <h2 className="h-display mt-3 text-3xl tracking-tight md:text-4xl balance">
+                {founderMessage.title}
+              </h2>
+              <div className="mt-6 space-y-5">
+                {founderMessage.paragraphs.map((p) => (
+                  <p key={p} className="text-lg leading-relaxed text-fg-muted pretty">
+                    {p}
+                  </p>
+                ))}
+              </div>
+              <div className="mt-8 flex items-center gap-4 border-t border-border pt-6">
+                <div
+                  aria-hidden
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-[radial-gradient(circle_at_30%_30%,#2B58E0,#1B3FB4)] text-sm font-semibold text-white shadow-soft"
+                >
+                  BC
+                </div>
+                <div>
+                  <p className="font-medium text-fg">{founderMessage.name}</p>
+                  <p className="text-sm text-fg-subtle">{founderMessage.role}</p>
+                </div>
+              </div>
             </div>
           </Reveal>
         </Container>

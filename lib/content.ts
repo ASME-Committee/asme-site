@@ -21,7 +21,7 @@ export const nav = [
   { label: "About", href: "/about" },
   { label: "Programs", href: "/programs" },
   { label: "Events", href: "/events" },
-  { label: "Resources", href: "/resources" },
+  { label: "Insights", href: "/insights" },
   { label: "Community", href: "/community" },
   { label: "Partners", href: "/partners" },
 ] as const;
@@ -632,6 +632,32 @@ export type PartnerTier = {
   features: string[];
   placeholder?: boolean;
 };
+
+/** Personal message from the founder for the About page. DRAFT from Brandon's
+ *  existing words and mission statement. Edit, shorten, or replace freely. */
+export const founderMessage = {
+  title: "Why I Founded ASME",
+  paragraphs: [
+    "Early in my career I noticed something that never left me. The people who understand where healthcare breaks are the ones standing in it every day. Clinicians see the gaps, feel the friction, and carry the ideas that could fix them. Yet almost nothing in our training tells us what to do with those ideas.",
+    "I founded ASME to change that. I wanted a home for doctors, nurses, allied health professionals, pharmacists, and students who believe they can build the solutions, not just describe the problems. A place where entrepreneurship and innovation are treated as a legitimate part of a clinical career, not a departure from it.",
+    "We are here to give clinicians the network, the programs, and the confidence to make an impact at scale, without leaving clinical practice behind. If you have ever thought there has to be a better way, you are exactly who this society is for.",
+  ],
+  name: "Dr Brandon Carp",
+  role: "President and Founder, ASME",
+} as const;
+
+/** Featured videos for the Insights hub. */
+export type Video = { title: string; youtubeId: string; start?: number; blurb: string };
+export const videos: Video[] = [
+  {
+    title: "On why healthcare needs clinician entrepreneurs",
+    youtubeId: "BpSRQdUilKE",
+    // TODO: set `start` to the second the speech proper begins, to skip the personal intro.
+    start: 0,
+    blurb:
+      "University of Melbourne graduation address, Faculty of Medicine, Dentistry and Health Sciences, 2023.",
+  },
+];
 
 export const partnerTiers: PartnerTier[] = [
   {

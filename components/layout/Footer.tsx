@@ -12,7 +12,7 @@ const cols = [
       { label: "About", href: "/about" },
       { label: "Programs", href: "/programs" },
       { label: "Events", href: "/events" },
-      { label: "Resources", href: "/resources" },
+      { label: "Insights", href: "/insights" },
       { label: "Community", href: "/community" },
       { label: "Partners", href: "/partners" },
     ],
