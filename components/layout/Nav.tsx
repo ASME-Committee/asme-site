@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { LogoMark } from "@/components/ui/LogoMark";
@@ -34,23 +35,49 @@ export function Nav() {
           <span className="sr-only">ASME, home</span>
         </Link>
 
+        {/* Desktop nav with dropdowns */}
         <nav className="hidden md:flex items-center gap-1">
-          {nav.map((n) => (
-            <Link
-              key={n.href}
-              href={n.href}
-              className="rounded-full px-3 py-1.5 text-sm text-fg-muted transition-colors hover:text-fg hover:bg-surface-subtle"
-            >
-              {n.label}
-            </Link>
-          ))}
+          {nav.map((n) =>
+            n.children ? (
+              <div key={n.href} className="group relative">
+                <Link
+                  href={n.href}
+                  className="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-sm text-fg-muted transition-colors hover:text-fg hover:bg-surface-subtle group-focus-within:text-fg"
+                >
+                  {n.label}
+                  <ChevronDown className="h-3.5 w-3.5 opacity-60 transition-transform duration-200 group-hover:rotate-180" />
+                </Link>
+                {/* pt-2 keeps a hover bridge between trigger and panel */}
+                <div className="invisible absolute left-0 top-full pt-2 opacity-0 translate-y-1 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0">
+                  <ul className="min-w-[15rem] rounded-2xl border border-border bg-surface-elevated p-2 shadow-lift">
+                    {n.children.map((c) => (
+                      <li key={`${c.label}-${c.href}`}>
+                        <Link
+                          href={c.href}
+                          className="block rounded-lg px-3 py-2 text-sm text-fg-muted transition-colors hover:bg-surface-subtle hover:text-fg"
+                        >
+                          {c.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={n.href}
+                href={n.href}
+                className="rounded-full px-3 py-1.5 text-sm text-fg-muted transition-colors hover:text-fg hover:bg-surface-subtle"
+              >
+                {n.label}
+              </Link>
+            ),
+          )}
         </nav>
 
         <div className="flex items-center gap-2">
           <ButtonLink
             href={site.joinUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             variant="primary"
             size="sm"
             className="hidden sm:inline-flex"
@@ -79,27 +106,41 @@ export function Nav() {
         </div>
       </Container>
 
+      {/* Mobile menu: parents with indented children */}
       <div
         className={cn(
           "md:hidden overflow-hidden border-b border-border bg-surface/95 backdrop-blur-xl transition-[max-height,opacity] duration-300",
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0",
+          open ? "max-h-[80vh] opacity-100 overflow-y-auto" : "max-h-0 opacity-0",
         )}
       >
         <Container className="py-4 flex flex-col gap-1">
           {nav.map((n) => (
-            <Link
-              key={n.href}
-              href={n.href}
-              onClick={() => setOpen(false)}
-              className="rounded-lg px-3 py-2 text-sm text-fg-muted hover:bg-surface-subtle hover:text-fg"
-            >
-              {n.label}
-            </Link>
+            <div key={n.href} className="flex flex-col">
+              <Link
+                href={n.href}
+                onClick={() => setOpen(false)}
+                className="rounded-lg px-3 py-2 text-sm font-medium text-fg hover:bg-surface-subtle"
+              >
+                {n.label}
+              </Link>
+              {n.children && (
+                <div className="ml-3 flex flex-col border-l border-border pl-3">
+                  {n.children.map((c) => (
+                    <Link
+                      key={`${c.label}-${c.href}`}
+                      href={c.href}
+                      onClick={() => setOpen(false)}
+                      className="rounded-lg px-3 py-1.5 text-sm text-fg-muted hover:bg-surface-subtle hover:text-fg"
+                    >
+                      {c.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
           <ButtonLink
             href={site.joinUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             variant="primary"
             size="sm"

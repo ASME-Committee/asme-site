@@ -17,14 +17,39 @@ export const site = {
   joinUrl: "https://airtable.com/appJvGdxRMBwIzthp/shrH2JDdg2Lf9xOvr",
 } as const;
 
-export const nav = [
-  { label: "About", href: "/about" },
+export type NavItem = {
+  label: string;
+  href: string;
+  children?: { label: string; href: string }[];
+};
+
+export const nav: NavItem[] = [
+  {
+    label: "About",
+    href: "/about",
+    children: [
+      { label: "Our story", href: "/about#story" },
+      { label: "Our people", href: "/about#people" },
+      { label: "Advocacy", href: "/about#positions" },
+      { label: "Endorsements", href: "/about#endorsements" },
+      { label: "Partners", href: "/partners" },
+    ],
+  },
   { label: "Programs", href: "/programs" },
   { label: "Events", href: "/events" },
-  { label: "Insights", href: "/insights" },
+  {
+    label: "Insights",
+    href: "/insights",
+    children: [
+      { label: "Newsletters", href: "/insights" },
+      { label: "Webinars (Clinician+)", href: "/insights#videos" },
+      { label: "Interviews", href: "/blog" },
+      { label: "Podcasts", href: "/insights" },
+      { label: "Videos", href: "/insights#videos" },
+    ],
+  },
   { label: "Community", href: "/community" },
-  { label: "Partners", href: "/partners" },
-] as const;
+];
 
 export const hero = {
   eyebrow: "For clinicians who build",
