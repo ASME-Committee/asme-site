@@ -16,6 +16,7 @@ const cols = [
       { label: "Insights", href: "/insights" },
       { label: "Community", href: "/community" },
       { label: "Partners", href: "/partners" },
+      { label: "Startup Directory", href: "/startup-directory" },
     ],
   },
   {

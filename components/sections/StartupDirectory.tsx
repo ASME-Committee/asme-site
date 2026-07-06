@@ -22,18 +22,8 @@ export function StartupDirectory() {
   return (
     <section id="directory" className="section relative bg-surface-subtle">
       <Container>
-        <Reveal className="max-w-2xl">
-          <span className="eyebrow">Startup directory</span>
-          <h2 className="h-display mt-3 text-display-lg balance">
-            Ventures built by our members.
-          </h2>
-          <p className="mt-5 text-lg leading-relaxed text-fg-muted pretty">
-            Clinician founders from AUSCEP and the ASME community. Search by name, venture, or sector.
-          </p>
-        </Reveal>
-
         {/* Search */}
-        <Reveal className="mt-8">
+        <Reveal>
           <div className="relative max-w-md">
             <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-fg-subtle" />
             <input

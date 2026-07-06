@@ -11,7 +11,6 @@ import { Auscep } from "@/components/sections/Auscep";
 import { MemberSpotlights } from "@/components/sections/MemberSpotlights";
 import { Insights } from "@/components/sections/Insights";
 import { Events } from "@/components/sections/Events";
-import { StartupDirectory } from "@/components/sections/StartupDirectory";
 import { JoinCTA } from "@/components/sections/JoinCTA";
 
 export default function HomePage() {
@@ -30,7 +29,6 @@ export default function HomePage() {
         <MemberSpotlights />
         <Insights />
         <Events />
-        <StartupDirectory />
         <JoinCTA />
       </main>
       <Footer />
