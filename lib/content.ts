@@ -363,14 +363,25 @@ export const testimonials: Testimonial[] = [
 
 export type Eventish = {
   title: string;
-  type: "Dinner" | "Roundtable" | "Pitch night" | "Workshop" | "Demo day";
+  type: "Dinner" | "Roundtable" | "Pitch night" | "Workshop" | "Demo day" | "Hackathon";
   city: "Sydney" | "Melbourne" | "Brisbane" | "Perth" | "Adelaide" | "Online";
   date: string;
   blurb: string;
   upcoming: boolean;
+  href?: string;
 };
 
 export const events: Eventish[] = [
+  {
+    title: "Healthcare x AI Hackathon",
+    type: "Hackathon",
+    city: "Sydney",
+    date: "Jul 18-19, 2026",
+    blurb:
+      "A healthcare and AI hackathon at Stone & Chalk. Grand prize is $10,000 USD in OpenAI API credits plus 3 months of Base44 builder tier. Come build something in health, or bring what you are already building.",
+    upcoming: true,
+    href: "https://luma.com/mlai-8obe",
+  },
   {
     title: "Founder & Investor dinner",
     type: "Dinner",
