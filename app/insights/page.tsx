@@ -9,6 +9,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Insights } from "@/components/sections/Insights";
 import { VideoEmbed } from "@/components/ui/VideoEmbed";
 import { videos } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Insights",
@@ -73,7 +74,7 @@ export default function InsightsPage() {
                   {c.image && (
                     <div className="relative aspect-[16/10] overflow-hidden border-b border-border bg-surface-subtle">
                       <Image
-                        src={c.image}
+                        src={asset(c.image)}
                         alt={c.title}
                         fill
                         sizes="(max-width: 768px) 100vw, 33vw"

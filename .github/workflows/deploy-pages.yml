@@ -31,7 +31,7 @@ jobs:
         env:
           # Project site is served from /asme-site. Remove this (and add a
           # CNAME) when a custom domain served at the root is connected.
-          PAGES_BASE_PATH: /asme-site
+          NEXT_PUBLIC_BASE_PATH: /asme-site
         run: npm run build
       - name: Disable Jekyll processing
         run: touch out/.nojekyll

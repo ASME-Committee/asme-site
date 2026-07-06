@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { LogoMark } from "@/components/ui/LogoMark";
 import { NewsletterSignup } from "@/components/layout/NewsletterSignup";
 import { site, partners } from "@/lib/content";
+import { asset } from "@/lib/asset";
 
 const cols = [
   {
@@ -108,7 +109,7 @@ export function Footer() {
                 className="transition-opacity hover:opacity-100"
               >
                 <Image
-                  src={p.logo}
+                  src={asset(p.logo)}
                   alt={p.name}
                   width={160}
                   height={48}
