@@ -226,14 +226,10 @@ export const auscep = {
     },
   ],
   outcomes: [
-    "120 clinicians across VIC, NSW and WA in Cohorts 1 and 2",
+    "120 clinicians supported across VIC, NSW and WA",
     "$20M+ raised by participants",
     "18,000 lives impacted across pilots and rollouts",
   ],
-  cta: {
-    label: "Apply for the next cohort",
-    href: "https://airtable.com/appJvGdxRMBwIzthp/shrH2JDdg2Lf9xOvr",
-  },
 } as const;
 
 /** Real AUSCEP cohort participants from asme.org.au/startup-directory. */
@@ -644,7 +640,7 @@ export const programsList: ProgramItem[] = [
   {
     name: "AUSCEP",
     tagline: "The Australian Clinical Entrepreneur Program",
-    body: "Our flagship 12-month, part-time program delivered with MTPConnect. 120 clinicians across VIC, NSW, and WA took part in Cohorts 1 and 2, combining clinical practice with entrepreneurial fundamentals, mentorship, and a showcase to investors and partners.",
+    body: "Our flagship 12-month, part-time program delivered with MTPConnect. 120 clinicians across VIC, NSW, and WA have taken part, combining clinical practice with entrepreneurial fundamentals, mentorship, and a showcase to investors and partners.",
     status: "Cohort based",
     href: "#auscep",
   },

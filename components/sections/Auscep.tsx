@@ -1,7 +1,5 @@
-import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { ButtonLink } from "@/components/ui/Button";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { auscep } from "@/lib/content";
 
@@ -21,19 +19,6 @@ export function Auscep() {
             <p className="mt-6 text-lg leading-relaxed text-fg-muted pretty">
               {auscep.description}
             </p>
-
-            <div className="mt-8">
-              <ButtonLink
-                href={auscep.cta.href}
-                variant="primary"
-                size="md"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {auscep.cta.label}
-                <ArrowRight className="h-4 w-4" />
-              </ButtonLink>
-            </div>
 
             <ul className="mt-10 space-y-2 text-sm">
               {auscep.outcomes.map((o) => (
