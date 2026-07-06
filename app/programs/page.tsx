@@ -78,7 +78,7 @@ export default function ProgramsPage() {
             {[
               { n: "01", t: "Join ASME (free)", d: "Become a member so we can match you to the right program and cohort." },
               { n: "02", t: "Submit an application", d: "Tell us about your idea, your stage, and what you want from the program." },
-              { n: "03", t: "Interview and onboard", d: "Shortlisted applicants meet the delivery team and join the next cohort." },
+              { n: "03", t: "Interview and onboard", d: "Shortlisted applicants meet the delivery team and are onboarded into the right program." },
             ].map((s, i) => (
               <Reveal key={s.n} delay={i * 0.06}>
                 <li className="card h-full p-7">
