@@ -6,6 +6,7 @@ import { Search } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { startups } from "@/lib/startups";
+import { asset } from "@/lib/asset";
 
 export function StartupDirectory() {
   const [query, setQuery] = useState("");
@@ -56,7 +57,7 @@ export function StartupDirectory() {
               <article key={`${s.name}-${s.company}`} className="card card-hover flex h-full gap-4 p-5">
                 <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border border-border bg-surface-subtle">
                   <Image
-                    src={s.photo}
+                    src={asset(s.photo)}
                     alt={s.name}
                     fill
                     sizes="56px"
