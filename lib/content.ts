@@ -206,7 +206,7 @@ export const auscep = {
   title: "AUSCEP",
   subtitle: "The Australian Clinical Entrepreneur Program.",
   description:
-    "An industry-leading innovation program designed to advance clinician-led transformation across Australia's healthcare workforce. 12 months. Cohort based. Application only.",
+    "ASME's flagship clinical entrepreneur program, delivered with MTPConnect across four cohorts. Over 12 months it took clinicians from idea to venture through workshops, mentorship, and a showcase to investors and partners. Its alumni and their companies fill the startup directory.",
   pillars: [
     {
       title: "Build your toolkit",
@@ -226,7 +226,7 @@ export const auscep = {
     },
   ],
   outcomes: [
-    "120 clinicians supported across VIC, NSW and WA",
+    "Four cohorts delivered across VIC, NSW and WA",
     "$20M+ raised by participants",
     "18,000 lives impacted across pilots and rollouts",
   ],
@@ -631,7 +631,7 @@ export type ProgramItem = {
   name: string;
   tagline: string;
   body: string;
-  status: "Open" | "Cohort based" | "Coming soon";
+  status: "Open" | "Cohort based" | "Coming soon" | "Delivered";
   href: string;
   placeholder?: boolean;
 };
@@ -640,8 +640,8 @@ export const programsList: ProgramItem[] = [
   {
     name: "AUSCEP",
     tagline: "The Australian Clinical Entrepreneur Program",
-    body: "Our flagship 12-month, part-time program delivered with MTPConnect. 120 clinicians across VIC, NSW, and WA have taken part, combining clinical practice with entrepreneurial fundamentals, mentorship, and a showcase to investors and partners.",
-    status: "Cohort based",
+    body: "Our flagship 12-month, part-time program, delivered with MTPConnect across four cohorts. Clinicians across VIC, NSW, and WA combined clinical practice with entrepreneurial fundamentals, mentorship, and a showcase to investors and partners. Their ventures fill the startup directory.",
+    status: "Delivered",
     href: "#auscep",
   },
   {
