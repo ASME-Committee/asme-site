@@ -29,6 +29,8 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     color-scheme: light;
+    /* Guard against any stray element forcing horizontal scroll on mobile. */
+    overflow-x: hidden;
   }
 
   body {
