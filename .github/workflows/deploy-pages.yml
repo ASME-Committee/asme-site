@@ -28,10 +28,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build static site
-        env:
-          # Project site is served from /asme-site. Remove this (and add a
-          # CNAME) when a custom domain served at the root is connected.
-          NEXT_PUBLIC_BASE_PATH: /asme-site
+        # Served at the root of the custom domain (asme.org.au), so no base path.
         run: npm run build
       - name: Disable Jekyll processing
         run: touch out/.nojekyll
