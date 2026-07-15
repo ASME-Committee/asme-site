@@ -25,7 +25,33 @@ export function Pathways() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-12">
+        {/* Mobile: simple stacked cards (the tab/panel split doesn't work on phones) */}
+        <div className="mt-10 flex flex-col gap-3 lg:hidden">
+          {pathways.map((p, i) => (
+            <Reveal key={p.id} delay={i * 0.04}>
+              <article className="card p-6">
+                <div className="flex items-center gap-3">
+                  <span className="font-mono text-xs tracking-wider text-brand-blue">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="font-display text-2xl tracking-tight text-fg">{p.title}</h3>
+                </div>
+                <p className="mt-3 text-base leading-relaxed text-fg-muted pretty">{p.pitch}</p>
+                <ul className="mt-4 space-y-2">
+                  {p.unlocks.map((u) => (
+                    <li key={u} className="flex items-start gap-2.5 text-sm text-fg">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-blue" />
+                      {u}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+
+        {/* Desktop: interactive tabs + panel */}
+        <div className="mt-12 hidden gap-8 lg:grid lg:grid-cols-12">
           {/* Tab list */}
           <div className="lg:col-span-5">
             <ul role="tablist" className="relative flex flex-col border-l-2 border-border">

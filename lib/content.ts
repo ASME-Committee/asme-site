@@ -24,30 +24,10 @@ export type NavItem = {
 };
 
 export const nav: NavItem[] = [
-  {
-    label: "About",
-    href: "/about",
-    children: [
-      { label: "Our story", href: "/about#story" },
-      { label: "Our people", href: "/about#people" },
-      { label: "Advocacy", href: "/about#positions" },
-      { label: "Endorsements", href: "/about#endorsements" },
-      { label: "Partners", href: "/partners" },
-    ],
-  },
+  { label: "About", href: "/about" },
   { label: "Programs", href: "/programs" },
   { label: "Events", href: "/events" },
-  {
-    label: "Insights",
-    href: "/insights",
-    children: [
-      { label: "Newsletters", href: "/insights" },
-      { label: "Webinars (Clinician+)", href: "/insights#videos" },
-      { label: "Interviews", href: "/blog" },
-      { label: "Podcasts", href: "/insights" },
-      { label: "Videos", href: "/insights#videos" },
-    ],
-  },
+  { label: "Insights", href: "/insights" },
   { label: "Community", href: "/community" },
 ];
 

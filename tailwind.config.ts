@@ -52,10 +52,11 @@ const config: Config = {
         mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
       fontSize: {
-        // Tighter, display-grade scale
-        "display-2xl": ["clamp(3.5rem, 7vw, 6.5rem)", { lineHeight: "0.95", letterSpacing: "-0.04em" }],
-        "display-xl": ["clamp(2.75rem, 5vw, 4.75rem)", { lineHeight: "1", letterSpacing: "-0.035em" }],
-        "display-lg": ["clamp(2.25rem, 4vw, 3.5rem)", { lineHeight: "1.05", letterSpacing: "-0.03em" }],
+        // Tighter, display-grade scale. Minimums are kept small so long words
+        // (e.g. "entrepreneurs") never overflow narrow phone screens.
+        "display-2xl": ["clamp(2.25rem, 8vw, 6.5rem)", { lineHeight: "1.0", letterSpacing: "-0.03em" }],
+        "display-xl": ["clamp(1.9rem, 6.5vw, 4.75rem)", { lineHeight: "1.05", letterSpacing: "-0.03em" }],
+        "display-lg": ["clamp(1.7rem, 5vw, 3.5rem)", { lineHeight: "1.1", letterSpacing: "-0.025em" }],
       },
       letterSpacing: {
         tightest: "-0.045em",
