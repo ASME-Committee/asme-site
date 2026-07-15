@@ -29,6 +29,7 @@ export const nav: NavItem[] = [
   { label: "Events", href: "/events" },
   { label: "Insights", href: "/insights" },
   { label: "Community", href: "/community" },
+  { label: "Partners", href: "/partners" },
 ];
 
 export const hero = {
