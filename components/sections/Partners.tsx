@@ -11,6 +11,10 @@ import { asset } from "@/lib/asset";
  * Just the partner marquee. Quotes live further down in Testimonials.
  */
 export function Partners() {
+  // Platinum partner leads the strip.
+  const ordered = [...partners].sort(
+    (a, b) => Number(b.tier === "platinum") - Number(a.tier === "platinum"),
+  );
   return (
     <section
       id="partners"
@@ -28,7 +32,7 @@ export function Partners() {
       <Reveal className="mt-10">
         <div className="relative overflow-hidden mask-fade-x">
           <div className="flex w-max animate-marquee">
-            {[...partners, ...partners].map((p, i) => (
+            {[...ordered, ...ordered].map((p, i) => (
               <a
                 key={`${p.name}-${i}`}
                 href={p.href}
@@ -42,7 +46,7 @@ export function Partners() {
                   alt={p.name}
                   width={320}
                   height={112}
-                  className="max-h-20 w-auto object-contain"
+                  className={`w-auto object-contain ${p.tier === "platinum" ? "max-h-24" : "max-h-20"}`}
                 />
               </a>
             ))}

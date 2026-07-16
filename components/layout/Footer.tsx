@@ -99,7 +99,10 @@ export function Footer() {
             In good company
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-x-10 gap-y-6 opacity-70">
-            {partners.slice(0, 7).map((p) => (
+            {[...partners]
+              .sort((a, b) => Number(b.tier === "platinum") - Number(a.tier === "platinum"))
+              .slice(0, 7)
+              .map((p) => (
               <a
                 key={p.name}
                 href={p.href}

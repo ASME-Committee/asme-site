@@ -427,6 +427,7 @@ export type Partner = {
   logo: string;
   href: string;
   className?: string; // optional sizing override
+  tier?: "platinum";
 };
 
 export const partners: Partner[] = [
@@ -449,6 +450,7 @@ export const partners: Partner[] = [
     name: "DBG Health",
     logo: "/partners/dbg-health.png",
     href: "https://dbghealth.com.au",
+    tier: "platinum",
   },
   {
     name: "Doctorpreneurs",
